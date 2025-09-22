@@ -138,6 +138,7 @@ const styles: Record<string, React.CSSProperties> = {
     gap: 2,             
     border: "2px solid #ccc", 
     marginBottom: 16,   
+    margin: "0 auto"
   },
   piece: {
     cursor: "pointer",     
