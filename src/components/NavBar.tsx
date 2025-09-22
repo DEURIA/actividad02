@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "../auth";
 
 // Importamos algunos íconos desde react-icons (FontAwesome y Material Design)
-import { FaUserAstronaut, FaGamepad, FaSignOutAlt, FaDragon } from "react-icons/fa";
+import { FaUserAstronaut, FaGamepad, FaSignOutAlt, FaDragon, FaPuzzlePiece } from "react-icons/fa";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -35,6 +35,12 @@ export default function Navbar() {
               <FaGamepad style={{ marginRight: 6 }} />
               Adivinar Nombre
             </Link>
+          </li>
+          <li style={styles.li}>
+          <Link to="/puzzle" style={styles.link}>
+          <FaPuzzlePiece style={{ marginRight: 6 }} />
+            Puzzle
+          </Link>
           </li>
         </ul>
 

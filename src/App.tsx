@@ -5,6 +5,8 @@ import ProtectedLayout from "./layouts/ProtectedLayout"; // ⬅️ Importa el la
 import Login from "./pages/Login";
 import Personajes from "./pages/Personajes";
 import AdivinaNombre from "./pages/AdivinaNombre";
+import Puzzle from "./pages/Puzzle";
+
 export default function App() {
   
     return (
@@ -20,6 +22,7 @@ export default function App() {
           <Route element={<ProtectedLayout />}>
             <Route path="/personajes" element={<Personajes />} />
             <Route path="/adivina-nombre" element={<AdivinaNombre />} />
+            <Route path="/puzzle" element={<Puzzle />} />
           </Route>
         </Route>
   
