@@ -18,7 +18,9 @@ export function signIn(email: string, password: string): boolean {
   if (!e || !p) return false;
 
   // compara contra tu mock (case-insensitive para email)
-  const ok = mockDatos.some(u => u.email.toLowerCase() === e && u.password === p);
+  const ok = mockDatos.some(u => 
+    u.email.toLowerCase() === e &&  // compara email del mock en minúsculas contra 'e'
+    u.password === p);               // y contraseña exacta
   if (ok) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ email: e }));
     return true;
@@ -31,11 +33,11 @@ export function signIn(email: string, password: string): boolean {
 // En la práctica uso mock local. Si luego tengo backend, cambiaria esto pero por ahora como es un ejercicio...
 // Aquí sólo valido contra tu mock en memoria:
 
-
+//Como va sabersi hay alguien logueado... lee el localstorage, asi voy a evitar colcoarl locastorage.getitem/json.parse en todo lado
 export function getCurrentUser(): { email: string } | null {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) return null;
-  try { return JSON.parse(raw); } catch { return null; }
+  const raw = localStorage.getItem(STORAGE_KEY); // lee el string guardado
+  if (!raw) return null;  // Si no existe la clave, no hay sesión activa
+  try { return JSON.parse(raw); } catch { return null; }// si está corrupto, lo trata como no logueado
 }
 
 

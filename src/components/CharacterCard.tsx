@@ -18,6 +18,7 @@ export default function CharacterCard({ ch }: { ch: RMCharacter }) {
   );
 }
 
+//el ch recibe el prop llamado ch y le digo a ts que forma tiene, es decir el ch es para desestructurar la prop y decir como ch es un RMchracter
 //Estilos basicos para que se vea como una tarjeta
 const styles: Record<string, React.CSSProperties> = {
   card: { background: "#fff", borderRadius: 12, overflow: "hidden", boxShadow: "0 8px 24px rgba(0,0,0,.06)", display: "flex", flexDirection: "column" },

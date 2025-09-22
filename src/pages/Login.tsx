@@ -12,7 +12,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-
+  //como tengo tantos use state podria haberlo hecho con un use reducer, pero x
   // Si ya hay sesión, entra directo a /personajes
   useEffect(() => {
     if (getCurrentUser()) navigate("/personajes", { replace: true });
